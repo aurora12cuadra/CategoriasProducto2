@@ -1,0 +1,12 @@
+services:
+  app:
+    image: apicategoriaproductos:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://aws-0-us-west-1.pooler.supabase.com:6543/postgres?user=postgres.stqhtirgmaxfprfozhbm&password=SupaPassword22!!!
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: SupaPassword22!!!
