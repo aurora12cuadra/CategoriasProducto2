@@ -1,0 +1,52 @@
+<p>Estos son los productos en existencia!</p>
+<div class="mt-3"></div>
+<div class="container">
+    <div class="card border-primary text-center">
+        <div class="card-header text-primary">
+            <h1 class="card-title text-center text-primary">
+                Productos
+            </h1>
+        </div>
+        <div class="card-body text-primary border-primary">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>IdProducto</th>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Precio</th>
+                        <th>Existencia</th>
+                        <th>Categoría</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of products">
+                        <td>{{p.id}}</td>
+                        <td>{{p.nombreProducto}}</td>
+                        <td>{{p.descripcionProducto}}</td>
+                        <td>{{p.precioProducto}}</td>
+                        <td>{{p.existenciaProducto}}</td>
+                        <td>{{p.category.nombre }}</td>
+                        <td>
+                            <button type="button" class="btn btn-outline-success btn-sm" (click)="editProduct(p)">
+                                Actualizar
+                            </button> 
+                        </td>
+                        <td>
+                            <button class="btn btn-outline-danger btn-sm" type="button" (click)="deleteProduct(p.id)">
+                                Eliminar
+                            </button>
+                        </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            <td>
+                <button class="btn btn-outline-primary btn-sm" (click)="CreateProduct()">
+                    Agregar Producto
+                </button>
+            </td>
+        </div>
+    </div>
+</div>
